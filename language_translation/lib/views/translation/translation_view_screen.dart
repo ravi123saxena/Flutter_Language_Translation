@@ -46,27 +46,18 @@ class TranslationPage extends StatelessWidget {
             padding: const EdgeInsets.all(30.0),
             child: Container(
               width: 300,
-              height: 40,
+              height: 50,
               color: Colors.green,
               child: LanguagePickerDropdown(
-                  initialValue: Languages.hindi,
+                  initialValue: Languages.english,
                   onValuePicked: (Language language) {
                     controller.setLanguagePicked(language.isoCode);
+                    controller.setTranslation(
+                      message,
+                    );
                   }),
             ),
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          customButton('Proceed', onPressed: () {
-            if (controller.langCode.value.isNotEmpty) {
-              controller.setTranslation(
-                message,
-              );
-            } else {
-              showSnackBar('Please select language to convert');
-            }
-          }),
           const SizedBox(
             height: 30,
           ),

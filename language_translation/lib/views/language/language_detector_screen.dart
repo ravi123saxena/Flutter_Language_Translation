@@ -81,20 +81,6 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
                       }),
                     ],
                   ),
-
-                  // Expanded(
-                  //   child: Align(
-                  //     alignment: Alignment.bottomCenter,
-                  //     child: Container(
-                  //       margin: const EdgeInsets.all(30),
-                  //       width: double.infinity,
-                  //       child: ElevatedButton(
-                  //         onPressed: () => controller.shareText(message),
-                  //         child: const Text('Share', style: kButtonStyle),
-                  //       ), // trying to move to the bottom
-                  //     ),
-                  //   ),
-                  // ),
                 ],
               ),
             ),

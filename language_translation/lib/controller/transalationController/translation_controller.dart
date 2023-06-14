@@ -7,7 +7,7 @@ import 'package:translator/translator.dart';
 
 class TranslationController extends GetxController {
   var resultTranslation = ''.obs;
-  var langCode = 'hi'.obs;
+  var langCode = 'en'.obs;
   final translator = GoogleTranslator();
 
   @override

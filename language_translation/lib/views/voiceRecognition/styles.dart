@@ -7,7 +7,7 @@ const kProceedTextStyle =
 
 const kTextStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.normal);
 const kSelectLanguageText =
-    'Please select language and press the mic button to speack and stop when done...';
+    'Please press the mic button to speack and stop when done...';
 
 const kSelectLanguageTextStyle =
     TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
