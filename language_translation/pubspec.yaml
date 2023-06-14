@@ -39,7 +39,7 @@ dependencies:
   learning_language: ^0.0.4
   speech_to_text: ^6.1.1
   avatar_glow: ^2.0.2
-  share_plus: ^3.0.4
+  share_plus: ^4.0.4
 
 
 

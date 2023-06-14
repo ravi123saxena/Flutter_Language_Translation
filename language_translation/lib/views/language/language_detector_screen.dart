@@ -24,22 +24,6 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
     });
   }
 
-  Widget renderButton(text, {required GestureTapCallback onPressed}) {
-    return Expanded(
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          margin: const EdgeInsets.all(30),
-          width: double.infinity,
-          child: ElevatedButton(
-            onPressed: () => onPressed,
-            child: Text(text, style: kButtonStyle),
-          ), // trying to move to the bottom
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,12 +60,18 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
                     textAlign: TextAlign.center,
                     style: kLanguageDetectedText,
                   ),
-                  renderButton('Share', onPressed: () {
-                    languageController.shareText(message);
-                  }),
-                  const Text(
-                    'Please use physical device to share',
-                    style: TextStyle(fontSize: 18),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        margin: const EdgeInsets.all(30),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () => controller.shareText(message),
+                          child: const Text('Share', style: kButtonStyle),
+                        ), // trying to move to the bottom
+                      ),
+                    ),
                   ),
                 ],
               ),

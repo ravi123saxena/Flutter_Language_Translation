@@ -19,9 +19,8 @@ class LanguageDetectorController extends GetxController {
   }
 
   shareText(String text) async {
-    await Share.share(
-      text,
-    );
+    debugPrint('share text $text');
+    Share.share(text);
   }
 
   Future<String> identifyLanguage(message) async {
@@ -32,7 +31,8 @@ class LanguageDetectorController extends GetxController {
       if (language.isNotEmpty) {
         detectedLanguage = language;
       } else {
-        detectedLanguage = 'No language was identified.Please go back and try again with different text';
+        detectedLanguage =
+            'No language was identified.Please go back and try again with different text';
         debugPrint('identified language: $language');
       }
     } catch (err) {
