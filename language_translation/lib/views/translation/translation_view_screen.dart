@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 import 'package:language_picker/language_picker_dropdown.dart';
 import 'package:language_picker/languages.dart';
 import 'package:language_translation/controller/transalationController/translation_controller.dart';
-import 'package:language_translation/views/language/styles.dart';
 import 'package:language_translation/widgets/radioButton/custom_button.dart';
 import 'package:language_translation/widgets/snackbar/snack_bar.dart';
-
 import '../../controller/textInputController/text_input_controller.dart';
 
 // ignore: must_be_immutable
@@ -51,7 +49,7 @@ class TranslationPage extends StatelessWidget {
               height: 40,
               color: Colors.green,
               child: LanguagePickerDropdown(
-                  initialValue: Languages.korean,
+                  initialValue: Languages.hindi,
                   onValuePicked: (Language language) {
                     controller.setLanguagePicked(language.isoCode);
                   }),

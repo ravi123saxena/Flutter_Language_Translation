@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:language_translation/controller/textInputController/text_input_controller.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:translator/translator.dart';
 
 class TranslationController extends GetxController {
   var resultTranslation = ''.obs;
-  var langCode = 'ko'.obs;
+  var langCode = 'hi'.obs;
   final translator = GoogleTranslator();
+
+  @override
+  onInit() {
+    super.onInit();
+    var message = Get.find<TextInputController>().textInputValue;
+    setTranslation(message);
+  }
 
   copyText(String text) {
     Clipboard.setData(ClipboardData(text: text));
