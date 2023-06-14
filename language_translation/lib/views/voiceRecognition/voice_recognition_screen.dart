@@ -51,42 +51,6 @@ class VoiceRecognitionScreen extends StatelessWidget {
               style: kSelectLanguageTextStyle,
             ),
           ),
-          Obx(
-            () => Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(
-                      color: Colors.black,
-                      style: BorderStyle.solid,
-                      width: 0.80),
-                ),
-                child: DropdownButton<String>(
-                  icon: const Icon(Icons.keyboard_arrow_down),
-                  hint: const Text(kHintText),
-                  items: language.map((String items) {
-                    return DropdownMenuItem(
-                      value: items,
-                      child: Text(
-                        items,
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    );
-                  }).toList(),
-                  value: controller.selectedLanguage.value,
-                  onChanged: (String? newValue) {
-                    if (newValue != null) {
-                      controller.setSelectedLanguage(newValue);
-                      controller.setSelectedLanguageCode(
-                          locale[language.indexOf(newValue)]);
-                    }
-                  },
-                ),
-              ),
-            ),
-          ),
           GetX<VoiceRecognitionController>(
             builder: (controller) => Padding(
               padding: const EdgeInsets.all(20.0),
@@ -96,6 +60,7 @@ class VoiceRecognitionScreen extends StatelessWidget {
               ),
             ),
           ),
+          
           Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,

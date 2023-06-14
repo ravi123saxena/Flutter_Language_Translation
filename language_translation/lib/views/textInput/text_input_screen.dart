@@ -4,7 +4,7 @@ import 'package:language_translation/controller/textInputController/text_input_c
 import 'package:language_translation/views/textInput/styles.dart';
 import 'package:language_translation/widgets/textInput/text_input_field.dart';
 import '../../routes/app_routes.dart';
-import '../../widgets/radioButton/custom_radio_button.dart';
+import '../../widgets/radioButton/custom_button.dart';
 
 // ignore: must_be_immutable
 class TextInputScreen extends StatelessWidget {
@@ -42,7 +42,7 @@ class TextInputScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              customButton(onPressed: () {
+              customButton('Proceed', onPressed: () {
                 onButtonPressed();
               }),
             ],

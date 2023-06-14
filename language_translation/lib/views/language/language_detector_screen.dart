@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:language_translation/controller/languageDetectionController/language_detector_controller.dart';
+import 'package:language_translation/routes/app_routes.dart';
 import 'package:language_translation/views/language/styles.dart';
+import 'package:language_translation/widgets/radioButton/custom_button.dart';
 
 import '../../controller/textInputController/text_input_controller.dart';
 
@@ -60,19 +62,39 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
                     textAlign: TextAlign.center,
                     style: kLanguageDetectedText,
                   ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        margin: const EdgeInsets.all(30),
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () => controller.shareText(message),
-                          child: const Text('Share', style: kButtonStyle),
-                        ), // trying to move to the bottom
-                      ),
-                    ),
+                  const SizedBox(height: 30.0),
+                  const Text(
+                    'Do you want to translate into different language ?',
+                    textAlign: TextAlign.center,
+                    style: kLanguageDetectedText,
                   ),
+                  const SizedBox(height: 100.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      customButton('Yes', onPressed: () {
+                        Get.toNamed(AppRoutes.translationScreen);
+                      }),
+                      customButton('No', onPressed: () {
+                        debugPrint('No');
+                      }),
+                    ],
+                  ),
+
+                  // Expanded(
+                  //   child: Align(
+                  //     alignment: Alignment.bottomCenter,
+                  //     child: Container(
+                  //       margin: const EdgeInsets.all(30),
+                  //       width: double.infinity,
+                  //       child: ElevatedButton(
+                  //         onPressed: () => controller.shareText(message),
+                  //         child: const Text('Share', style: kButtonStyle),
+                  //       ), // trying to move to the bottom
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
