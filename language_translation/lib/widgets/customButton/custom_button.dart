@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:language_translation/widgets/customButton/styles.dart';
 
 Widget customButton(String str, {required GestureTapCallback onPressed}) {
   return RawMaterialButton(
@@ -20,7 +21,7 @@ Widget customButton(String str, {required GestureTapCallback onPressed}) {
           ),
           Text(
             str,
-            style: const TextStyle(color: Colors.white, fontSize: 20),
+            style: kTitle,
           ),
         ],
       ),

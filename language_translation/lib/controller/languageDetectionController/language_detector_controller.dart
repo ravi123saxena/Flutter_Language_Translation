@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:learning_language/learning_language.dart';
 
-
 class LanguageDetectorController extends GetxController {
   String? detectedLanguage = '';
   var text = '';
@@ -15,8 +14,7 @@ class LanguageDetectorController extends GetxController {
       if (language.isNotEmpty) {
         detectedLanguage = language;
       } else {
-        detectedLanguage =
-            'No language was identified.Please go back and try again with different text';
+        detectedLanguage = 'No language was identified.';
         debugPrint('identified language: $language');
       }
     } catch (err) {

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:language_translation/controller/languageDetectionController/language_detector_controller.dart';
 import 'package:language_translation/routes/app_routes.dart';
 import 'package:language_translation/views/language/styles.dart';
-import 'package:language_translation/widgets/radioButton/custom_button.dart';
+import 'package:language_translation/widgets/customButton/custom_button.dart';
 
 import '../../controller/textInputController/text_input_controller.dart';
 

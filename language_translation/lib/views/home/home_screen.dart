@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:language_translation/constants/values.dart';
 import 'package:language_translation/controller/homeController/home_controller.dart';
 import 'package:language_translation/views/home/styles.dart';
-import 'package:language_translation/widgets/radioButton/custom_button.dart';
+import 'package:language_translation/widgets/customButton/custom_button.dart';
 
 import '../../routes/app_routes.dart';
 import '../../widgets/snackbar/snack_bar.dart';

@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:language_picker/language_picker_dropdown.dart';
 import 'package:language_picker/languages.dart';
 import 'package:language_translation/controller/transalationController/translation_controller.dart';
-import 'package:language_translation/widgets/radioButton/custom_button.dart';
+import 'package:language_translation/views/translation/styles.dart';
+import 'package:language_translation/widgets/customButton/custom_button.dart';
 import 'package:language_translation/widgets/snackbar/snack_bar.dart';
 import '../../controller/textInputController/text_input_controller.dart';
 
@@ -25,8 +26,8 @@ class TranslationPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              'Select language to convert your text',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              kSelectlangText,
+              style: kSelectLanStyle,
             ),
           ),
           const SizedBox(
@@ -36,7 +37,7 @@ class TranslationPage extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Text(
               'Your language: $message',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: kLangText,
             ),
           ),
           const SizedBox(
@@ -86,14 +87,14 @@ class TranslationPage extends StatelessWidget {
                 if (controller.resultTranslation.value.isNotEmpty) {
                   controller.copyText(controller.resultTranslation.value);
                 } else {
-                  showSnackBar('Please convert your language first then share');
+                  showSnackBar(kSnackBarTitleCopyText);
                 }
               }),
               customButton('Share', onPressed: () {
                 if (controller.resultTranslation.value.isNotEmpty) {
                   controller.shareText(controller.resultTranslation.value);
                 } else {
-                  showSnackBar('Please convert your language first then share');
+                  showSnackBar(kSnackBarTitleText);
                 }
               }),
             ],
