@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:language_translation/viewModal/textInputController/textInput_controller.dart';
+import 'package:language_translation/controller/textInputController/text_input_controller.dart';
+import 'package:language_translation/views/textInput/styles.dart';
 import 'package:language_translation/widgets/textInput/text_input_field.dart';
 import '../../routes/app_routes.dart';
-import '../../widgets/chipset/custom_Radio_button.dart';
+import '../../widgets/radioButton/custom_radio_button.dart';
 
 // ignore: must_be_immutable
 class TextInputScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class TextInputScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Language Input Screen'),
+        title: const Text(kScreenTitle),
       ),
       body: Form(
         key: _formKey,
@@ -34,7 +35,7 @@ class TextInputScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: GetBuilder<TextInputController>(
                   builder: (controller) => createInputField(
-                      messageController, 'Start typing any language ....',
+                      messageController, kHintText,
                       onChanged: (value) => controller.onChangeText(value)),
                 ),
               ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:language_translation/viewModal/languageDetectionController/language_detector_controller.dart';
-import 'package:language_translation/viewModal/textInputController/textInput_controller.dart';
+import 'package:language_translation/controller/languageDetectionController/language_detector_controller.dart';
+import 'package:language_translation/views/language/styles.dart';
+
+import '../../controller/textInputController/text_input_controller.dart';
 
 class LanguageDetectorScreen extends StatefulWidget {
   const LanguageDetectorScreen({super.key});
@@ -31,14 +33,8 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
           width: double.infinity,
           child: ElevatedButton(
             onPressed: () => onPressed,
-            child: Text(
-              text,
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ), // trying to move to the bottom
-          ),
+            child: Text(text, style: kButtonStyle),
+          ), // trying to move to the bottom
         ),
       ),
     );
@@ -58,7 +54,7 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
               child: Column(
                 children: [
                   const Text(
-                    'Entered Message:',
+                    kLabelMessage,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -66,30 +62,26 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
                   Text(
                     message,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.normal),
+                    style: kEnteredMessage,
                   ),
                   const SizedBox(height: 30.0),
                   const Text(
-                    'Detected Language:',
+                    kLabelLanguage,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                    style: kDetectedLanguageStyle,
                   ),
-                   const SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Text(
                     '${controller.detectedLanguage}',
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.normal),
+                    style: kLanguageDetectedText,
                   ),
-                  
                   renderButton('Share', onPressed: () {
                     languageController.shareText(message);
                   }),
                   const Text(
                     'Please use physical device to share',
-                    style:  TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18),
                   ),
                 ],
               ),

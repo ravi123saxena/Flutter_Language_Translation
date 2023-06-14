@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:language_translation/viewModal/HomeController/home_controller_binding.dart';
+import 'package:language_translation/controller/homeController/home_controller_binding.dart';
 import 'package:language_translation/views/home/home_screen.dart';
 import 'routes/app_pages.dart';
 

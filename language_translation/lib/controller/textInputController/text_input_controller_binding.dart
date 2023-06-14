@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:language_translation/viewModal/textInputController/textInput_controller.dart';
+import 'package:language_translation/controller/textInputController/text_input_controller.dart';
 
 class TextInputControllerBinding extends Bindings {
   @override

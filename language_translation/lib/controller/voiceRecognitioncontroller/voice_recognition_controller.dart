@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:language_translation/viewModal/textInputController/textInput_controller.dart';
+import 'package:language_translation/controller/textInputController/text_input_controller.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class VoiceRecognitionController extends GetxController {
@@ -19,7 +19,6 @@ class VoiceRecognitionController extends GetxController {
 
   @override
   void onClose() {
-    // TODO: implement onClose
     super.onClose();
     _speech.stop();
     speechText.value = '';

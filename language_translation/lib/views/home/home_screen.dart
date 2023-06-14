@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:language_translation/constants/values.dart';
-import 'package:language_translation/viewModal/homeController/home_controller.dart';
-import 'package:language_translation/widgets/chipset/custom_Radio_button.dart';
+import 'package:language_translation/controller/homeController/home_controller.dart';
+import 'package:language_translation/views/home/styles.dart';
+import 'package:language_translation/widgets/radioButton/custom_radio_button.dart';
 
 import '../../routes/app_routes.dart';
 import '../../widgets/snackbar/snack_bar.dart';
@@ -40,9 +41,9 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Text(
-            'How do you want to proceed with trnslation? Please select...',
+            kHeaderTitle,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: kHeaderStyle,
           ),
           const SizedBox(height: 40),
           Row(
@@ -67,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                   ? Get.toNamed(AppRoutes.textInputScreen)
                   : Get.toNamed(AppRoutes.voiceRecognitionScreen);
             } else {
-              showSnackBar('Please select input from the radio button option');
+              showSnackBar(kInfoTitle);
             }
           }),
         ],

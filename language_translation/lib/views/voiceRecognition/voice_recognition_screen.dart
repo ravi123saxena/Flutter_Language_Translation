@@ -1,9 +1,10 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:language_translation/controller/textInputController/text_input_controller.dart';
 import 'package:language_translation/routes/app_routes.dart';
-import 'package:language_translation/viewModal/textInputController/textInput_controller.dart';
-import 'package:language_translation/viewModal/voiceRecognitionController/voiceRecognition_controller.dart';
+import 'package:language_translation/controller/voiceRecognitionController/voice_recognition_controller.dart';
+import 'package:language_translation/views/voicerecognition/styles.dart';
 import 'package:language_translation/widgets/snackbar/snack_bar.dart';
 
 // ignore: must_be_immutable
@@ -37,7 +38,7 @@ class VoiceRecognitionScreen extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Voice Recognition Screen'),
+        title: const Text(kVoiceText),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -46,8 +47,8 @@ class VoiceRecognitionScreen extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              'Please select language and press the mic button to speack and stop when done...',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              kSelectLanguageText,
+              style: kSelectLanguageTextStyle,
             ),
           ),
           Obx(
@@ -63,7 +64,7 @@ class VoiceRecognitionScreen extends StatelessWidget {
                 ),
                 child: DropdownButton<String>(
                   icon: const Icon(Icons.keyboard_arrow_down),
-                  hint: const Text('Please Select language'),
+                  hint: const Text(kHintText),
                   items: language.map((String items) {
                     return DropdownMenuItem(
                       value: items,
@@ -91,8 +92,7 @@ class VoiceRecognitionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Text(
                 controller.speechText.value,
-                style: const TextStyle(
-                    fontSize: 18, fontWeight: FontWeight.normal),
+                style: kTextStyle,
               ),
             ),
           ),
@@ -110,15 +110,12 @@ class VoiceRecognitionScreen extends StatelessWidget {
                       Get.toNamed(AppRoutes.languageDetectionScreen);
                       controller.isListening.value = false;
                     } else {
-                      showSnackBar('Please speak some words');
+                      showSnackBar(kInfoTitle);
                     }
                   },
                   child: const Text(
-                    '-> Proceed',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                    kProceedText,
+                    style: kProceedTextStyle,
                   ), // trying to move to the bottom
                 ),
               ),

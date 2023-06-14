@@ -16,6 +16,6 @@ Widget chip(String label, Color color) {
     backgroundColor: color,
     elevation: 6.0,
     shadowColor: Colors.grey[60],
-    padding: EdgeInsets.all(6.0),
+    padding: const EdgeInsets.all(6.0),
   );
 }
