@@ -4,7 +4,7 @@ Description: This app detect language, speech to text and translate into differe
 
 Screenshots:
 
-<img src="assets/1.png" height="500em" />&nbsp;<img src="assets/2.png" height="500em" />&nbsp;<img src="assets/3.png" height="500em" />&nbsp;<img src="assets/4.png" height="500em" />
+<img src="[assets](https://github.com/ravi123saxena/Flutter_Language_Translation/blob/main/language_translation/assets)/1.png" height="500em" />&nbsp;<img src="[assets](https://github.com/ravi123saxena/Flutter_Language_Translation/blob/main/language_translation/assets)/2.png" height="500em" />&nbsp;<img src="[assets](https://github.com/ravi123saxena/Flutter_Language_Translation/blob/main/language_translation/assets)/3.png" height="500em" />&nbsp;<img src="[assets](https://github.com/ravi123saxena/Flutter_Language_Translation/blob/main/language_translation/assets)/4.png" height="500em" />
 
 Step to Install:
 
