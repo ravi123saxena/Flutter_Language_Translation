@@ -38,14 +38,14 @@ class VoiceRecognitionScreen extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: const Text(kVoiceText),
+        title: const Text('Transalation'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(15.0),
             child: Text(
               kSelectLanguageText,
               style: kSelectLanguageTextStyle,
@@ -60,7 +60,6 @@ class VoiceRecognitionScreen extends StatelessWidget {
               ),
             ),
           ),
-          
           Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,

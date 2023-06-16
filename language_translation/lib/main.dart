@@ -16,7 +16,7 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.green),
       initialBinding: HomeControllerBinding(),
       home: const HomeScreen(),
       getPages: AppPages.pages,

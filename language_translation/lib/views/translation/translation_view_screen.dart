@@ -1,6 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:language_picker/language_picker_dropdown.dart';
+import 'package:language_picker/language_picker_dropdown_controller.dart';
 import 'package:language_picker/languages.dart';
 import 'package:language_translation/controller/transalationController/translation_controller.dart';
 import 'package:language_translation/views/translation/styles.dart';
@@ -17,12 +20,45 @@ class TranslationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Translation Screen'),
+        title: const Text('Translation'),
+        backgroundColor: Colors.green,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            'You have entered:',
+            style: kSelectLanStyle,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              height: 100,
+              decoration: BoxDecoration(
+                  color: Colors.green,
+                  border: Border.all(width: 1.0),
+                  borderRadius: BorderRadius.circular(5)),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    message,
+                    style: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+          ),
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
@@ -30,27 +66,24 @@ class TranslationPage extends StatelessWidget {
               style: kSelectLanStyle,
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              'Your language: $message',
-              style: kLangText,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: Container(
               width: 300,
               height: 50,
-              color: Colors.green,
+              color: Colors.yellowAccent,
               child: LanguagePickerDropdown(
                   initialValue: Languages.english,
+                  itemBuilder: (language) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          language.name,
+                          style: const TextStyle(
+                            color: Colors.blue,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
                   onValuePicked: (Language language) {
                     controller.setLanguagePicked(language.isoCode);
                     controller.setTranslation(
@@ -68,11 +101,25 @@ class TranslationPage extends StatelessWidget {
           ),
           Obx(
             () => Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                controller.resultTranslation.value,
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Colors.green,
+                    border: Border.all(width: 1.0),
+                    borderRadius: BorderRadius.circular(5)),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      controller.resultTranslation.value,
+                      style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -89,14 +136,14 @@ class TranslationPage extends StatelessWidget {
                 } else {
                   showSnackBar(kSnackBarTitleCopyText);
                 }
-              }),
+              }, fillColor: Colors.green),
               customButton('Share', onPressed: () {
                 if (controller.resultTranslation.value.isNotEmpty) {
                   controller.shareText(controller.resultTranslation.value);
                 } else {
                   showSnackBar(kSnackBarTitleText);
                 }
-              }),
+              }, fillColor: Colors.green),
             ],
           ),
         ],

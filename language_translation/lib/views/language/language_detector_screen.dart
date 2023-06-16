@@ -30,7 +30,7 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Language Input Screen'),
+        title: const Text('Transalation'),
       ),
       body: GetBuilder<LanguageDetectorController>(
         builder: (controller) {
@@ -45,11 +45,33 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10.0),
-                  Text(
-                    message,
-                    textAlign: TextAlign.center,
-                    style: kEnteredMessage,
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          border: Border.all(width: 1.0),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            message,
+                            style: const TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
+                  // Text(
+                  //   message,
+                  //   textAlign: TextAlign.center,
+                  //   style: kEnteredMessage,
+                  // ),
                   const SizedBox(height: 30.0),
                   const Text(
                     kLabelLanguage,
@@ -63,11 +85,22 @@ class _LanguageDetectorScreen extends State<LanguageDetectorScreen> {
                     style: kLanguageDetectedText,
                   ),
                   const SizedBox(height: 30.0),
-                  const Text(
-                    'Do you want to translate into different language ?',
-                    textAlign: TextAlign.center,
-                    style: kLanguageDetectedText,
+                  const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Do you want to translate into different language ?',
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal),
+                        ),
+                      ),
+                    ),
                   ),
+                  
                   const SizedBox(height: 100.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:language_translation/widgets/customButton/styles.dart';
 
-Widget customButton(String str, {required GestureTapCallback onPressed}) {
+Widget customButton(String str,
+    {Color fillColor = Colors.green, required GestureTapCallback onPressed}) {
   return RawMaterialButton(
-    fillColor: Colors.blueAccent,
-    splashColor: Colors.blueAccent,
+    fillColor: fillColor,
+    splashColor: fillColor,
     onPressed: onPressed,
     shape: const StadiumBorder(),
     child: Padding(
@@ -12,10 +13,10 @@ Widget customButton(String str, {required GestureTapCallback onPressed}) {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const Icon(
-            Icons.arrow_forward,
-            color: Colors.white,
-          ),
+          // const Icon(
+          //   Icons.arrow_forward,
+          //   color: Colors.white,
+          // ),
           const SizedBox(
             width: 10.0,
           ),

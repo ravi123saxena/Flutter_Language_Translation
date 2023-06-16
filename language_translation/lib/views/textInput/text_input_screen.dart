@@ -23,7 +23,7 @@ class TextInputScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(kScreenTitle),
+        title: const Text('Transalation'),
       ),
       body: Form(
         key: _formKey,
