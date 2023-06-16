@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       children: <Widget>[
         GetBuilder<HomeController>(
           builder: (controller) => Radio(
-              activeColor: Colors.blue,
+              activeColor: Colors.green,
               value: controller.translationType[btnIndex],
               groupValue: controller.select,
               onChanged: (value) => controller.onClickRadioButton(value)),
@@ -40,7 +40,9 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           const Text(
             kHeaderTitle,
             textAlign: TextAlign.center,
